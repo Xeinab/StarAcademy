@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5571C72A-5739-416C-8202-45FAEFC18685</string>
+	<key>IDESourceControlProjectName</key>
+	<string>StarAcademy</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C0C56EF7-BBD2-45BA-AD08-4C96B7167B62</key>
+		<string>https://github.com/Xeinab/VineLab.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>StarAcademy/StarAcademy.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C0C56EF7-BBD2-45BA-AD08-4C96B7167B62</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Xeinab/VineLab.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C0C56EF7-BBD2-45BA-AD08-4C96B7167B62</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C0C56EF7-BBD2-45BA-AD08-4C96B7167B62</string>
+			<key>IDESourceControlWCCName</key>
+			<string>VineLab</string>
+		</dict>
+	</array>
+</dict>
+</plist>
