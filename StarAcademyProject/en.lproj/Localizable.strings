@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  StarAcademy
+
+  Created by Zee on 9/27/14.
+  Copyright (c) 2014 VineLab. All rights reserved.
+*/
+
+
+"SA_STUDENTS" = "Students";
+"SA_TITLE" = "Title";
+"SA_DESCRIPTION" = "Description";
+"SA_DETAILS" = "Too Much Details to fill in here, I have no clue what to include.";
+"SA_HOROSCOPE" = "Horoscope";
+"SA_LION" = "Lion";
+"SA_MAJOR" = "Major";
+"SA_BUSINESS" = "Business";
+"SA_HOBBIES" = "Hobbies";
+"SA_SINGING" = "Singing";
+"SA_COLOR" = "Favorite Color";
+"SA_BLUE" = "Blue";
+"SA_BEST_DISH" = "Best Dish";
+"SA_SPAGHETTI" = "Spaghetti";
+"SA_BEST_MOVIE" = "Best Movie";
+"SA_ALF_MABROOK" = "Alf Mabrook";
+"SA_KEY" = "Key";
+"SA_VALUE" = "Value";

@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  StarAcademy
+
+  Created by Zee on 9/27/14.
+  Copyright (c) 2014 VineLab. All rights reserved.
+*/
+
+
+"SA_STUDENTS" = "الطلاب";
+"SA_TITLE" = "عنوان";
+"SA_DESCRIPTION" = "تفاصيل";
+"SA_DETAILS" = "صور البريم الأخير من ستار أكاديمي.";
+"SA_HOROSCOPE" = "البرج";
+"SA_LION" = "الأسد";
+"SA_MAJOR" = "الاختصاص";
+"SA_BUSINESS" = "تجارة";
+"SA_HOBBIES" = "هوايات";
+"SA_SINGING" = "الغناء";
+"SA_COLOR" = "أفضل لون";
+"SA_BLUE" = "أزرق";
+"SA_BEST_DISH" = "أفضل طبق";
+"SA_SPAGHETTI" = "معكرونة";
+"SA_BEST_MOVIE" = "أفضل فيلم";
+"SA_ALF_MABROOK" = "ألف مبروك";
+"SA_KEY" = "Key";
+"SA_VALUE" = "Value";
