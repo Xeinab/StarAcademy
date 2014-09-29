@@ -33,6 +33,15 @@
 		875D06BB19D6CAAE00064E7E /* CardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 875D06BA19D6CAAE00064E7E /* CardCollectionViewCell.m */; };
 		875D06BD19D6CAC700064E7E /* CardCollectionViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 875D06BC19D6CAC700064E7E /* CardCollectionViewCell_iPhone.xib */; };
 		875D06C619D6D68100064E7E /* CardInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 875D06C519D6D68100064E7E /* CardInfo.m */; };
+		879A1B9C19D9FDD2005E7228 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 879A1B9B19D9FDD2005E7228 /* Info.png */; };
+		879A1BA419DA10F8005E7228 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879A1BA019DA0D7E005E7228 /* Twitter.framework */; };
+		879A1BA519DA10F8005E7228 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879A1BA119DA0D7E005E7228 /* FacebookSDK.framework */; };
+		879A1BB019DA11DB005E7228 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 879A1BAC19DA11DB005E7228 /* FacebookSDKResources.bundle */; };
+		879A1BB119DA11DB005E7228 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 879A1BAD19DA11DB005E7228 /* FBUserSettingsViewResources.bundle */; };
+		879A1BB419DA1473005E7228 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 879A1BB319DA1473005E7228 /* libsqlite3.dylib */; };
+		879A1BB819DA14DD005E7228 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879A1BB719DA14DD005E7228 /* AdSupport.framework */; };
+		879A1BBC19DA2219005E7228 /* ShareToViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 879A1BBA19DA2219005E7228 /* ShareToViewController.m */; };
+		879A1BBF19DA235B005E7228 /* ShareToViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 879A1BBE19DA235B005E7228 /* ShareToViewController.xib */; };
 		87E3B7D019D73C86007F424F /* CardCollectionViewCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87E3B7CF19D73C86007F424F /* CardCollectionViewCell_iPad.xib */; };
 		87E3B7D219D7410D007F424F /* Arrow_iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87E3B7D119D7410D007F424F /* Arrow_iPad.jpg */; };
 		87E3B7D619D7455D007F424F /* 80X80.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E3B7D519D7455D007F424F /* 80X80.png */; };
@@ -84,6 +93,17 @@
 		875D06BC19D6CAC700064E7E /* CardCollectionViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardCollectionViewCell_iPhone.xib; path = CustomViews/CardCollectionViewCell_iPhone.xib; sourceTree = "<group>"; };
 		875D06C419D6D68100064E7E /* CardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardInfo.h; path = Shared/CardInfo.h; sourceTree = "<group>"; };
 		875D06C519D6D68100064E7E /* CardInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardInfo.m; path = Shared/CardInfo.m; sourceTree = "<group>"; };
+		879A1B9B19D9FDD2005E7228 /* Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Info.png; path = Images/Info.png; sourceTree = "<group>"; };
+		879A1BA019DA0D7E005E7228 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = StarAcademyProject/Libraries/Twitter.framework; sourceTree = "<group>"; };
+		879A1BA119DA0D7E005E7228 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = StarAcademyProject/Libraries/FacebookSDK.framework; sourceTree = "<group>"; };
+		879A1BAC19DA11DB005E7228 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = StarAcademyProject/Libraries/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		879A1BAD19DA11DB005E7228 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBUserSettingsViewResources.bundle; path = StarAcademyProject/Libraries/FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+		879A1BB319DA1473005E7228 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		879A1BB519DA14A3005E7228 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		879A1BB719DA14DD005E7228 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		879A1BB919DA2219005E7228 /* ShareToViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareToViewController.h; path = UIViewControllers/ShareToViewController.h; sourceTree = "<group>"; };
+		879A1BBA19DA2219005E7228 /* ShareToViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareToViewController.m; path = UIViewControllers/ShareToViewController.m; sourceTree = "<group>"; };
+		879A1BBE19DA235B005E7228 /* ShareToViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShareToViewController.xib; path = iPad/ShareToViewController.xib; sourceTree = "<group>"; };
 		87E3B7CF19D73C86007F424F /* CardCollectionViewCell_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardCollectionViewCell_iPad.xib; path = CustomViews/CardCollectionViewCell_iPad.xib; sourceTree = "<group>"; };
 		87E3B7D119D7410D007F424F /* Arrow_iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Arrow_iPad.jpg; path = Images/Arrow_iPad.jpg; sourceTree = "<group>"; };
 		87E3B7D519D7455D007F424F /* 80X80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 80X80.png; path = Images/80X80.png; sourceTree = "<group>"; };
@@ -97,6 +117,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				879A1BB819DA14DD005E7228 /* AdSupport.framework in Frameworks */,
+				879A1BB419DA1473005E7228 /* libsqlite3.dylib in Frameworks */,
+				879A1BA419DA10F8005E7228 /* Twitter.framework in Frameworks */,
+				879A1BA519DA10F8005E7228 /* FacebookSDK.framework in Frameworks */,
 				875D067419D6B7AE00064E7E /* CoreGraphics.framework in Frameworks */,
 				875D067819D6B7AE00064E7E /* CoreData.framework in Frameworks */,
 				875D067619D6B7AE00064E7E /* UIKit.framework in Frameworks */,
@@ -142,6 +166,11 @@
 		875D067019D6B7AE00064E7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				879A1BB719DA14DD005E7228 /* AdSupport.framework */,
+				879A1BB519DA14A3005E7228 /* libz.dylib */,
+				879A1BB319DA1473005E7228 /* libsqlite3.dylib */,
+				879A1BA019DA0D7E005E7228 /* Twitter.framework */,
+				879A1BA119DA0D7E005E7228 /* FacebookSDK.framework */,
 				875D067119D6B7AE00064E7E /* Foundation.framework */,
 				875D067319D6B7AE00064E7E /* CoreGraphics.framework */,
 				875D067519D6B7AE00064E7E /* UIKit.framework */,
@@ -155,6 +184,7 @@
 		875D067919D6B7AE00064E7E /* StarAcademyProject */ = {
 			isa = PBXGroup;
 			children = (
+				879A1BAA19DA11C0005E7228 /* Libraries */,
 				87E3B7E319D7482E007F424F /* Localizable.strings */,
 				875D06C319D6D66300064E7E /* Shared */,
 				875D06C019D6D19C00064E7E /* Images */,
@@ -204,6 +234,8 @@
 			children = (
 				875D06A919D6C07D00064E7E /* MainViewController.h */,
 				875D06AA19D6C07D00064E7E /* MainViewController.m */,
+				879A1BB919DA2219005E7228 /* ShareToViewController.h */,
+				879A1BBA19DA2219005E7228 /* ShareToViewController.m */,
 			);
 			name = UIViewControllers;
 			sourceTree = "<group>";
@@ -220,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				875D06B419D6C30300064E7E /* Storyboard.storyboard */,
+				879A1BBE19DA235B005E7228 /* ShareToViewController.xib */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -239,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				87055B0919D72ED80048A6EC /* Share.png */,
+				879A1B9B19D9FDD2005E7228 /* Info.png */,
 				87055B0419D703DC0048A6EC /* Arrow.png */,
 				87E3B7D119D7410D007F424F /* Arrow_iPad.jpg */,
 				87E3B7D519D7455D007F424F /* 80X80.png */,
@@ -257,6 +291,16 @@
 				87055B0819D707F30048A6EC /* Common.h */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		879A1BAA19DA11C0005E7228 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				879A1BAC19DA11DB005E7228 /* FacebookSDKResources.bundle */,
+				879A1BAD19DA11DB005E7228 /* FBUserSettingsViewResources.bundle */,
+			);
+			name = Libraries;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		8BADA69371DAB38DA6FCDDF0 /* Pods */ = {
@@ -351,13 +395,17 @@
 				87E3B7D219D7410D007F424F /* Arrow_iPad.jpg in Resources */,
 				87595E4D19D6FA5C00686AC3 /* Logo.jpg in Resources */,
 				87E3B7D019D73C86007F424F /* CardCollectionViewCell_iPad.xib in Resources */,
+				879A1BBF19DA235B005E7228 /* ShareToViewController.xib in Resources */,
+				879A1B9C19D9FDD2005E7228 /* Info.png in Resources */,
 				87055B0519D703DC0048A6EC /* Arrow.png in Resources */,
 				875D06BD19D6CAC700064E7E /* CardCollectionViewCell_iPhone.xib in Resources */,
+				879A1BB119DA11DB005E7228 /* FBUserSettingsViewResources.bundle in Resources */,
 				875D068919D6B7AE00064E7E /* Images.xcassets in Resources */,
 				875D06B519D6C30300064E7E /* Storyboard.storyboard in Resources */,
 				87E3B7E119D7482E007F424F /* Localizable.strings in Resources */,
 				875D06B719D6C76100064E7E /* Storyboard_iPad.storyboard in Resources */,
 				87595E5119D7022100686AC3 /* 58X58.png in Resources */,
+				879A1BB019DA11DB005E7228 /* FacebookSDKResources.bundle in Resources */,
 				87055B0A19D72ED80048A6EC /* Share.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +464,7 @@
 				875D06C619D6D68100064E7E /* CardInfo.m in Sources */,
 				875D068719D6B7AE00064E7E /* StarAcademy.xcdatamodeld in Sources */,
 				875D06AB19D6C07D00064E7E /* MainViewController.m in Sources */,
+				879A1BBC19DA2219005E7228 /* ShareToViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,10 +593,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/StarAcademyProject/Libraries";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StarAcademyProject/StarAcademy-Prefix.pch";
 				INFOPLIST_FILE = "StarAcademyProject/StarAcademy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -560,6 +611,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/StarAcademyProject/Libraries";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StarAcademyProject/StarAcademy-Prefix.pch";
 				INFOPLIST_FILE = "StarAcademyProject/StarAcademy-Info.plist";

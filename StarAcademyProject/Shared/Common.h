@@ -15,3 +15,4 @@
 
 #define FONT_HELVETICA_BOLD @"HelveticaNeue-BoldItalic"
 #define FONT_HELVETICA  @"Helvetica"
+#define LANGUAGE_ARABIC @"ar"

@@ -7,6 +7,7 @@
 //
 
 #import "CardCollectionViewCell.h"
+#import "Common.h"
 
 @implementation CardCollectionViewCell
 @synthesize mainImageView, titleImageView;
@@ -26,12 +27,34 @@
 
 -(void)initCellView
 {
+    [self setUpLanguage];
     titleImageView.layer.cornerRadius = 10.0f;
     [titleImageView.layer setMasksToBounds:YES];
-    self.backgroundColor = [UIColor clearColor];
-    backgroundView.backgroundColor = [UIColor whiteColor];
-    backgroundView.layer.cornerRadius = 2.0f;
+    self.backgroundColor = [UIColor whiteColor];
+    self.layer.cornerRadius = 2.0f;
+    NSTextAlignment alignment;
+    if (isArabicSupport)
+    {
+        alignment = NSTextAlignmentRight;
+    }
+    else
+    {
+        alignment = NSTextAlignmentLeft;
+    }
+    titleLabel.textAlignment = alignment;
+    descriptionLabel.textAlignment = alignment;
+    detailsLabel.textAlignment = alignment;
 }
+
+-(void)setUpLanguage
+{
+    NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    if ([language isEqualToString:LANGUAGE_ARABIC])
+    {
+        isArabicSupport = YES;
+    }
+}
+
 
 
 

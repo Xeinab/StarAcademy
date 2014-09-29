@@ -18,6 +18,7 @@
     UIView *backgroundView;
     
     UIScrollView *detailsScrollView;
+    BOOL isArabicSupport;
 }
 
 @property(nonatomic,retain)IBOutlet UIImageView *mainImageView;

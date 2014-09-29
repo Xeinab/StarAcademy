@@ -12,34 +12,60 @@
 #import "CardInfo.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Common.h"
+#import "ShareToViewController.h"
 
 #define SLIDE_TIMING .5
-#define ITEM_CELL_SIZE_IPHONE CGSizeMake(135,200)
+#define ITEM_CELL_SIZE_IPHONE CGSizeMake(170,200)
 #define ITEM_CELL_SIZE_IPAD CGSizeMake(310,277)
-#define GRADIENT_HEIGHT_IPHONE 330
+#define GRADIENT_HEIGHT_IPHONE 328
 #define GRADIENT_HEIGHT_IPAD 500
-#define PLACEHOLDER_IPHONE @"135x90"
+#define PLACEHOLDER_IPHONE @"180x90"
 #define PLACEHOLDER_IPAD @"302x109"
+
 
 @implementation MainViewController
 @synthesize cardsCollectionView;
 @synthesize gradientView;
+@synthesize detailsScrollView;
 @synthesize infoButton, shareButton;
-@synthesize nameLabel, nationalityLabel;
-@synthesize ageLabel, detailsScrollView;
+@synthesize toolBar;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupForIphoneOrIpad];
+   
+    [self setUpLanguage];
+    [self setUpForIphoneOrIpad];
     [self initNavigationBar];
     [self setUpDataForCardsOfCount :15];
     [self initCollectionView];
     [self initGradientView];
-    [self initDetails];
+    [self initDetailsView];
+    [self setupDetailsView];
 }
 
--(void)setupForIphoneOrIpad
+
+
+-(void)setUpLanguage
+{
+    NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    if ([language isEqualToString:LANGUAGE_ARABIC])
+    {
+        isArabicSupport = YES;
+        nameValue = @"محمود المصري";
+        nationalityValue = @"الجنسية مصري";
+        ageValue = @"العمر ٢٤ سنة";
+    }
+    else
+    {
+        nameValue = @"Mahmoud Almasri";
+        nationalityValue = @"Egyption Nationality";
+        ageValue = @"Age of 24 years";
+    }
+}
+
+
+-(void)setUpForIphoneOrIpad
 {
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
@@ -105,16 +131,66 @@
 {
     gradientView.gradientColors = @[[UIColor blackColor], GRAY_COLOR];
     [gradientView setAlpha:0.8f];
-    [infoButton addTarget:self action:@selector(showInfoView:) forControlEvents:UIControlEventTouchUpInside];
 }
 
--(void)initDetails
+-(void)initDetailsView
 {
-    nameLabel.text = @"محمود المصري";
-    nationalityLabel.text = @"الجنسية مصري";
-    ageLabel.text = @"العمر ٢٤ سنة";
+    int x = 0;
+    int buttonX = 0;
+    NSTextAlignment alignment;
+    if (isArabicSupport)
+    {
+        x = 110;
+        buttonX = 8;
+        alignment =  NSTextAlignmentRight;
+    }
+    else
+    {
+        x = 8;
+        buttonX = 250;
+        alignment = NSTextAlignmentLeft;
+    }
 
-    NSMutableArray *detailsArray = [NSMutableArray arrayWithObjects:NSLocalizedString(@"SA_HOROSCOPE", @""),NSLocalizedString(@"SA_LION", @""),
+    
+    infoButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonX, 14, 22, 22)];
+    [infoButton setImage:[UIImage imageNamed:@"Info.png"] forState:UIControlStateNormal];
+    [infoButton addTarget:self action:@selector(showInfoView:) forControlEvents:UIControlEventTouchUpInside];
+    
+    shareButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonX + 37, 13, 22, 22)];
+    [shareButton setImage:[UIImage imageNamed:@"Share.png"] forState:UIControlStateNormal];
+    [shareButton addTarget:self action:@selector(goToShareView:) forControlEvents:UIControlEventTouchUpInside];
+
+    UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, 2, 200, 21)];
+    [nameLabel setFont:[UIFont boldSystemFontOfSize:16]];
+    [nameLabel setTextColor:[UIColor whiteColor]];
+    
+    UILabel *nationalityLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, 26, 200, 21)];
+    [nationalityLabel setFont:[UIFont systemFontOfSize:14]];
+    [nationalityLabel setTextColor:[UIColor whiteColor]];
+    
+    UILabel *ageLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, 47, 200, 21)];
+    [ageLabel setFont:[UIFont systemFontOfSize:14]];
+    [ageLabel setTextColor:[UIColor whiteColor]];
+    
+    nameLabel.text = nameValue;
+    nationalityLabel.text = nationalityValue;
+    ageLabel.text = ageValue;
+    
+    nameLabel.textAlignment = alignment;
+    nationalityLabel.textAlignment = alignment;
+    ageLabel.textAlignment = alignment;
+    
+    [self.view addSubview:infoButton];
+    [self.view addSubview:shareButton];
+    [self.view addSubview:nameLabel];
+    [self.view addSubview:nationalityLabel];
+    [self.view addSubview:ageLabel];
+}
+
+
+-(void)setupDetailsView
+{
+    NSMutableArray *details = [NSMutableArray arrayWithObjects:NSLocalizedString(@"SA_HOROSCOPE", @""),NSLocalizedString(@"SA_LION", @""),
                                     NSLocalizedString(@"SA_MAJOR", @""),NSLocalizedString(@"SA_BUSINESS", @""),
                                     NSLocalizedString(@"SA_HOBBIES", @""),NSLocalizedString(@"SA_SINGING", @""),
                                     NSLocalizedString(@"SA_COLOR", @""),NSLocalizedString(@"SA_BLUE", @""),
@@ -125,37 +201,44 @@
                                     NSLocalizedString(@"SA_KEY", @""),NSLocalizedString(@"SA_VALUE", @""),
                                     NSLocalizedString(@"SA_KEY", @""),NSLocalizedString(@"SA_VALUE", @""),
                                     NSLocalizedString(@"SA_KEY", @""),NSLocalizedString(@"SA_VALUE", @""),nil];
-    [self setupDetailsView:detailsArray];
-}
-
-
--(void)setupDetailsView :(NSMutableArray*)details
-{
     detailsScrollView.backgroundColor = [UIColor clearColor];
+    int x = 0;
     int y = 10;
+    int indentation = 0;
     for (int i=0;i<[details count];i++)
     {
-        int x = 20;
+        NSTextAlignment alignment ;
+        if (isArabicSupport)
+        {
+            x = 230;
+            indentation = -170;
+            alignment = NSTextAlignmentRight;
+        }
+        else
+        {
+            x = 20;
+            indentation = 170;
+            alignment = NSTextAlignmentLeft;
+        }
         
-        UILabel *keyLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, y, screenWidth, 21)];
+        UILabel *keyLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, y, 80, 21)];
         keyLabel.textColor = [UIColor whiteColor];
         [keyLabel setFont:[UIFont systemFontOfSize:14]];
+        keyLabel.textAlignment = alignment;
         keyLabel.text = [details objectAtIndex:i];
-        keyLabel.textAlignment = NSTextAlignmentLeft;
-        [keyLabel sizeToFit];
         [detailsScrollView addSubview:keyLabel];
         
-        x+=150;
-        UILabel *valueLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, y, screenWidth, 21)];
+        x +=indentation;
+        
+        UILabel *valueLabel = [[UILabel alloc]initWithFrame:CGRectMake(x, y, 80, 21)];
         valueLabel.textColor = [UIColor whiteColor];
         [valueLabel setFont:[UIFont systemFontOfSize:14]];
+        valueLabel.textAlignment = alignment;
         valueLabel.text = [details objectAtIndex:i+1];
-        valueLabel.textAlignment = NSTextAlignmentLeft;
-        [valueLabel sizeToFit];
         [detailsScrollView addSubview:valueLabel];
         
         i++;
-        y += 25;
+        y += 20;
     }
     detailsScrollView.hidden = YES;
     
@@ -215,6 +298,20 @@
    // [cell.detailsScrollView setContentSize:cell.detailsLabel.frame.size];
 
     return cell;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 2.0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 2.0;
+}
+
+-(void)goToShareView :(id)sender
+{
+    ShareToViewController *shareView = [[ShareToViewController alloc]init];
+    [self.navigationController pushViewController:shareView animated:YES];
 }
 
 
