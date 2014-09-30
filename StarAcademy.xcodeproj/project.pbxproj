@@ -42,6 +42,8 @@
 		879A1BB819DA14DD005E7228 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879A1BB719DA14DD005E7228 /* AdSupport.framework */; };
 		879A1BBC19DA2219005E7228 /* ShareToViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 879A1BBA19DA2219005E7228 /* ShareToViewController.m */; };
 		879A1BBF19DA235B005E7228 /* ShareToViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 879A1BBE19DA235B005E7228 /* ShareToViewController.xib */; };
+		879A1BC519DB4F54005E7228 /* BackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 879A1BC419DB4F54005E7228 /* BackButton.png */; };
+		879A1BC719DB5DF1005E7228 /* ShareToViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 879A1BC619DB5DF0005E7228 /* ShareToViewController_iPad.xib */; };
 		87E3B7D019D73C86007F424F /* CardCollectionViewCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87E3B7CF19D73C86007F424F /* CardCollectionViewCell_iPad.xib */; };
 		87E3B7D219D7410D007F424F /* Arrow_iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87E3B7D119D7410D007F424F /* Arrow_iPad.jpg */; };
 		87E3B7D619D7455D007F424F /* 80X80.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E3B7D519D7455D007F424F /* 80X80.png */; };
@@ -104,6 +106,8 @@
 		879A1BB919DA2219005E7228 /* ShareToViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareToViewController.h; path = UIViewControllers/ShareToViewController.h; sourceTree = "<group>"; };
 		879A1BBA19DA2219005E7228 /* ShareToViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareToViewController.m; path = UIViewControllers/ShareToViewController.m; sourceTree = "<group>"; };
 		879A1BBE19DA235B005E7228 /* ShareToViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShareToViewController.xib; path = iPad/ShareToViewController.xib; sourceTree = "<group>"; };
+		879A1BC419DB4F54005E7228 /* BackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BackButton.png; path = Images/BackButton.png; sourceTree = "<group>"; };
+		879A1BC619DB5DF0005E7228 /* ShareToViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShareToViewController_iPad.xib; path = iPad/ShareToViewController_iPad.xib; sourceTree = "<group>"; };
 		87E3B7CF19D73C86007F424F /* CardCollectionViewCell_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardCollectionViewCell_iPad.xib; path = CustomViews/CardCollectionViewCell_iPad.xib; sourceTree = "<group>"; };
 		87E3B7D119D7410D007F424F /* Arrow_iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Arrow_iPad.jpg; path = Images/Arrow_iPad.jpg; sourceTree = "<group>"; };
 		87E3B7D519D7455D007F424F /* 80X80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 80X80.png; path = Images/80X80.png; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				875D06B619D6C76100064E7E /* Storyboard_iPad.storyboard */,
+				879A1BC619DB5DF0005E7228 /* ShareToViewController_iPad.xib */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 		875D06C019D6D19C00064E7E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				879A1BC419DB4F54005E7228 /* BackButton.png */,
 				87055B0919D72ED80048A6EC /* Share.png */,
 				879A1B9B19D9FDD2005E7228 /* Info.png */,
 				87055B0419D703DC0048A6EC /* Arrow.png */,
@@ -392,9 +398,11 @@
 			files = (
 				87E3B7D619D7455D007F424F /* 80X80.png in Resources */,
 				875D067E19D6B7AE00064E7E /* InfoPlist.strings in Resources */,
+				879A1BC519DB4F54005E7228 /* BackButton.png in Resources */,
 				87E3B7D219D7410D007F424F /* Arrow_iPad.jpg in Resources */,
 				87595E4D19D6FA5C00686AC3 /* Logo.jpg in Resources */,
 				87E3B7D019D73C86007F424F /* CardCollectionViewCell_iPad.xib in Resources */,
+				879A1BC719DB5DF1005E7228 /* ShareToViewController_iPad.xib in Resources */,
 				879A1BBF19DA235B005E7228 /* ShareToViewController.xib in Resources */,
 				879A1B9C19D9FDD2005E7228 /* Info.png in Resources */,
 				87055B0519D703DC0048A6EC /* Arrow.png in Resources */,

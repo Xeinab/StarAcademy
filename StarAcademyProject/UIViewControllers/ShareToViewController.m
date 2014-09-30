@@ -16,16 +16,54 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   [self initView];
+    [self initView];
+    [self initNavigationBar];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self initView];
+}
+
+-(void)initNavigationBar
+{
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
+    
+    UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
+    titleView.backgroundColor = [UIColor clearColor];
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
+    [titleLabel setTextColor:GREEN_COLOR];
+    [titleLabel setTextAlignment:NSTextAlignmentCenter];
+    [titleLabel setText:NSLocalizedString(@"SA_SHARE", @"")];
+    [titleView addSubview:titleLabel];
+    [self.navigationItem setTitleView:titleView];
+    
+    [self.navigationItem.backBarButtonItem setTintColor:[UIColor redColor]];
+    
+   /* UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
+    [backButton setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BackButton.png"]]];
+    [backButton addTarget :self action:@selector(goBack:)
+          forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *button = [[UIBarButtonItem alloc]
+                               initWithCustomView :backButton];
+    
+    self.navigationItem.leftBarButtonItem = button;
+    self.navigationItem.hidesBackButton = YES;*/
+}
+
+
+-(void)goBack :(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
 -(void)initView
 {
-    //  self.view.backgroundColor = [UIColor redColor];
-    
     [facebookButton setTitle:NSLocalizedString(@"SA_FACEBOOK", @"") forState:UIControlStateNormal];
-    
     [facebookButton addTarget:self action:@selector(shareToFacebook:) forControlEvents:UIControlEventTouchUpInside];
     
     [twitterButton setTitle:NSLocalizedString(@"SA_TWITTER", @"") forState:UIControlStateNormal];
@@ -46,22 +84,22 @@
                 case SLComposeViewControllerResultCancelled:
                 default:
                 {
-                    NSLog(@"Cancelled.....");
+                    NSLog(@"shareToFacebook - Cancelled.....");
                     // [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs://"]];
                     
                 }
                     break;
                 case SLComposeViewControllerResultDone:
                 {
-                    NSLog(@"Posted....");
+                    NSLog(@"shareToFacebook - Posted....");
+                    [self performSelector:@selector(goBack:) withObject:nil];
                 }
                     break;
             }};
         
         
         //[fbController addImage:imageView.image];
-        NSString *fbShare = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SA_FACEBOOK", @"")];
-        [fbController setInitialText:fbShare];
+        [fbController addURL:[NSURL URLWithString:@"http://staracarabia.com"]];
         [fbController setCompletionHandler:completionHandler];
         [self presentViewController:fbController animated:YES completion:nil];
     }
@@ -74,36 +112,34 @@
 
 - (void)shareToTwitter :(id)sender
 {
-    SLComposeViewController *fbController=[SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    SLComposeViewController *twitterController=[SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewControllerCompletionHandler __block completionHandler=^(SLComposeViewControllerResult result){
             
-            [fbController dismissViewControllerAnimated:YES completion:nil];
+            [twitterController dismissViewControllerAnimated:YES completion:nil];
             
             switch(result){
                 case SLComposeViewControllerResultCancelled:
                 default:
                 {
-                    NSLog(@"Cancelled.....");
-                    // [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs://"]];
-                    
+                    NSLog(@"shareToTwitter - Cancelled.....");
+                    [self performSelector:@selector(goBack:) withObject:nil];
                 }
                     break;
                 case SLComposeViewControllerResultDone:
                 {
-                    NSLog(@"Posted....");
+                    NSLog(@"shareToTwitter - Posted....");
                 }
                     break;
             }};
         
         
         // [fbController addImage:imageView.image];
-        NSString *fbShare = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SA_TWITTER", @"")];
-        [fbController setInitialText:fbShare];
-        [fbController setCompletionHandler:completionHandler];
-        [self presentViewController:fbController animated:YES completion:nil];
+        [twitterController addURL:[NSURL URLWithString:@"http://staracarabia.com"]];
+        [twitterController setCompletionHandler:completionHandler];
+        [self presentViewController:twitterController animated:YES completion:nil];
     }
     else
     {

@@ -34,6 +34,9 @@
     NSString *ageValue;
     NSString *nationalityValue;
     
+    int iPadIndentation;
+    int iPadIndentationForSecondLabel;;
+    
 }
 @property (nonatomic,retain) IBOutlet UICollectionView *cardsCollectionView;
 @property (nonatomic,retain) IBOutlet SAMGradientView *gradientView;

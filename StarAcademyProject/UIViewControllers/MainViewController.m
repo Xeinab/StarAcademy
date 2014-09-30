@@ -75,6 +75,9 @@
         itemCellSize = ITEM_CELL_SIZE_IPAD;
         gradientHeightExpanded = GRADIENT_HEIGHT_IPAD;
         placeHolderURL = [NSString stringWithFormat:@"http://placehold.it/%@",PLACEHOLDER_IPAD];
+        
+        iPadIndentation = 450;
+        iPadIndentationForSecondLabel = 200;
     }
     else
     {
@@ -84,6 +87,9 @@
         itemCellSize = ITEM_CELL_SIZE_IPHONE;
         gradientHeightExpanded = GRADIENT_HEIGHT_IPHONE;
         placeHolderURL = [NSString stringWithFormat:@"http://placehold.it/%@",PLACEHOLDER_IPHONE];
+        
+        iPadIndentation = 0;
+        iPadIndentationForSecondLabel = 0;
     }
 }
 
@@ -140,14 +146,15 @@
     NSTextAlignment alignment;
     if (isArabicSupport)
     {
-        x = 110;
+        x = 110 + iPadIndentation;
         buttonX = 8;
         alignment =  NSTextAlignmentRight;
     }
     else
     {
         x = 8;
-        buttonX = 250;
+    
+        buttonX = 250 + iPadIndentation;
         alignment = NSTextAlignmentLeft;
     }
 
@@ -210,14 +217,14 @@
         NSTextAlignment alignment ;
         if (isArabicSupport)
         {
-            x = 230;
-            indentation = -170;
+            x = 230 + iPadIndentation;
+            indentation = -170 - iPadIndentationForSecondLabel;
             alignment = NSTextAlignmentRight;
         }
         else
         {
             x = 20;
-            indentation = 170;
+            indentation = 170 + iPadIndentationForSecondLabel;
             alignment = NSTextAlignmentLeft;
         }
         
@@ -310,8 +317,16 @@
 
 -(void)goToShareView :(id)sender
 {
-    ShareToViewController *shareView = [[ShareToViewController alloc]init];
-    [self.navigationController pushViewController:shareView animated:YES];
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        ShareToViewController *shareView = [[ShareToViewController alloc]initWithNibName:@"ShareToViewController_iPad" bundle:nil];
+        [self.navigationController pushViewController:shareView animated:YES];
+    }
+    else
+    {
+        ShareToViewController *shareView = [[ShareToViewController alloc]initWithNibName:@"ShareToViewController" bundle:nil];
+        [self.navigationController pushViewController:shareView animated:YES];
+    }
 }
 
 
